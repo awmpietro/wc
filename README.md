@@ -1,13 +1,13 @@
 # code challenge: wc command line tool
 
-a simple version of the UNIX's command line tool "wc" in golang.
+a simple version of the UNIX's command line tool "wc" written in golang.
 
 ## Installation
 
 To use this, clone the repo:
 
 ```bash
-git clone https://github.com/awmpietro/token-bucket-rate-limiter.git
+git clone https://github.com/awmpietro/wc.git
 ```
 
 ## Usage:
