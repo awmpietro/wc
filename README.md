@@ -18,7 +18,7 @@ Build and install
 go install github.com/awmpietro/ccwc
 ```
 
-Create an instance of NewLimiter and apply as a middleware to a handler:
+In your terminal, use the commands:
 
 ```bash
 // count the number of bytes
