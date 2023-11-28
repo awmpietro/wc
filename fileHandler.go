@@ -10,8 +10,16 @@ type fileHandler struct {
 	count    int
 }
 
-func (fh fileHandler) getBytesNumber() (int, error) {
+func (fh fileHandler) openFile() (*os.File, error) {
 	file, err := os.Open(fh.fileName)
+	if err != nil {
+		return nil, err
+	}
+	return file, nil
+}
+
+func (fh fileHandler) bytesCount() (int, error) {
+	file, err := fh.openFile()
 	if err != nil {
 		return 0, err
 	}
@@ -24,8 +32,8 @@ func (fh fileHandler) getBytesNumber() (int, error) {
 	return fh.count, nil
 }
 
-func (fh fileHandler) getLinesNumber() (int, error) {
-	file, err := os.Open(fh.fileName)
+func (fh fileHandler) linesCount() (int, error) {
+	file, err := fh.openFile()
 	if err != nil {
 		return 0, err
 	}
@@ -38,8 +46,8 @@ func (fh fileHandler) getLinesNumber() (int, error) {
 	return fh.count, nil
 }
 
-func (fh fileHandler) getWordsNumber() (int, error) {
-	file, err := os.Open(fh.fileName)
+func (fh fileHandler) wordsCount() (int, error) {
+	file, err := fh.openFile()
 	if err != nil {
 		return 0, err
 	}
@@ -52,8 +60,8 @@ func (fh fileHandler) getWordsNumber() (int, error) {
 	return fh.count, nil
 }
 
-func (fh fileHandler) getCharsNumber() (int, error) {
-	file, err := os.Open(fh.fileName)
+func (fh fileHandler) charsCount() (int, error) {
+	file, err := fh.openFile()
 	if err != nil {
 		return 0, err
 	}

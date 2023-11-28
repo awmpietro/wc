@@ -9,7 +9,8 @@ type stdinHandler struct {
 	count int
 }
 
-func (sh stdinHandler) getBytesNumber() (int, error) {
+func (sh stdinHandler) bytesCount() (int, error) {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanBytes)
 
@@ -19,7 +20,8 @@ func (sh stdinHandler) getBytesNumber() (int, error) {
 	return sh.count, nil
 }
 
-func (sh stdinHandler) getLinesNumber() (int, error) {
+func (sh stdinHandler) linesCount() (int, error) {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanLines)
 
@@ -29,7 +31,8 @@ func (sh stdinHandler) getLinesNumber() (int, error) {
 	return sh.count, nil
 }
 
-func (sh stdinHandler) getWordsNumber() (int, error) {
+func (sh stdinHandler) wordsCount() (int, error) {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanWords)
 
@@ -39,7 +42,8 @@ func (sh stdinHandler) getWordsNumber() (int, error) {
 	return sh.count, nil
 }
 
-func (sh stdinHandler) getCharsNumber() (int, error) {
+func (sh stdinHandler) charsCount() (int, error) {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanRunes)
 

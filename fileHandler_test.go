@@ -54,13 +54,13 @@ func TestFileHandler(t *testing.T) {
 			t.Run(tt.name, func(t *testing.T) {
 				switch tt.id {
 				case 1:
-					count, err = testFileHandler.getBytesNumber()
+					count, err = testFileHandler.bytesCount()
 				case 2:
-					count, err = testFileHandler.getLinesNumber()
+					count, err = testFileHandler.linesCount()
 				case 3:
-					count, err = testFileHandler.getWordsNumber()
+					count, err = testFileHandler.wordsCount()
 				case 4:
-					count, err = testFileHandler.getCharsNumber()
+					count, err = testFileHandler.charsCount()
 				}
 				if err != nil {
 					t.Errorf("unexpected error: %s", err)

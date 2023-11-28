@@ -58,13 +58,13 @@ func TestStdinHandler(t *testing.T) {
 				tmpFile.Seek(0, 0)
 				switch tt.id {
 				case 1:
-					count, err = testStdinHandler.getBytesNumber()
+					count, err = testStdinHandler.bytesCount()
 				case 2:
-					count, err = testStdinHandler.getLinesNumber()
+					count, err = testStdinHandler.linesCount()
 				case 3:
-					count, err = testStdinHandler.getWordsNumber()
+					count, err = testStdinHandler.wordsCount()
 				case 4:
-					count, err = testStdinHandler.getCharsNumber()
+					count, err = testStdinHandler.charsCount()
 				}
 				if err != nil {
 					t.Errorf("unexpected error: %s", err)
