@@ -1,4 +1,4 @@
-# code challenge: wc command line tool
+wc command line tool
 
 a simple version of the UNIX's command line tool "wc" written in golang.
 
